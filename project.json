@@ -1,0 +1,22 @@
+{
+  "overview": "Premium futuristic personal brand + product system for Prince Sharma / AVT3B. Features 9 full-viewport sections with smooth navigation, a dynamic product store powered by backend storage, and a hidden admin panel for managing products.",
+  "features": [
+    "9 full-screen sections with smooth keyboard/button navigation",
+    "Dynamic product cards with image, price, and buy button",
+    "Hidden admin panel (A×3 trigger) with product CRUD",
+    "Image uploads via object storage",
+    "Premium black + neon green design with glow effects",
+    "Custom cursor and entrance animations",
+    "Mobile-responsive with swipe on product section",
+    "WhatsApp CTA for lead generation"
+  ],
+  "category": "personal-brand",
+  "tags": [
+    "personal-brand",
+    "portfolio",
+    "product-store",
+    "admin-panel",
+    "futuristic-ui"
+  ],
+  "last_updated": "2026-04-19T16:47:04.322Z"
+}

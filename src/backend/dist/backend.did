@@ -1,0 +1,43 @@
+type _ImmutableObjectStorageRefillResult = 
+ record {
+   success: opt bool;
+   topped_up_amount: opt nat;
+ };
+type _ImmutableObjectStorageRefillInformation = record {
+                                                  proposed_top_up_amount:
+                                                   opt nat;};
+type _ImmutableObjectStorageCreateCertificateResult = 
+ record {
+   blob_hash: text;
+   method: text;
+ };
+type Product = 
+ record {
+   created_at: int;
+   description: opt text;
+   id: nat;
+   image_url: text;
+   name: text;
+   pdf_url: text;
+   price: float64;
+   razorpay_link: text;
+ };
+service : {
+  _immutableObjectStorageBlobsAreLive: (hashes: vec blob) -> (vec bool) query;
+  _immutableObjectStorageBlobsToDelete: () -> (vec blob) query;
+  _immutableObjectStorageConfirmBlobDeletion: (blobs: vec blob) -> ();
+  _immutableObjectStorageCreateCertificate: (blobHash: text) ->
+   (_ImmutableObjectStorageCreateCertificateResult);
+  _immutableObjectStorageRefillCashier: (refillInformation:
+   opt _ImmutableObjectStorageRefillInformation) ->
+   (_ImmutableObjectStorageRefillResult);
+  _immutableObjectStorageUpdateGatewayPrincipals: () -> ();
+  addProduct: (name: text, price: float64, image_url: text, razorpay_link:
+   text, pdf_url: text, description: opt text) -> (Product);
+  deleteProduct: (id: nat) -> (bool);
+  getProducts: () -> (vec Product) query;
+  getUploadUrl: (filename: text, contentType: text) -> (text);
+  updateProduct: (id: nat, name: text, price: float64, image_url: text,
+   razorpay_link: text, pdf_url: text, description: opt text) ->
+   (opt Product);
+}

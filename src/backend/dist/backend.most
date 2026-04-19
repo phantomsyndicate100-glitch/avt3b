@@ -1,0 +1,43 @@
+// Version: 3.0.0
+type List__415060402<T> = List__790383201<T>;
+type List__790383201<T> =
+  {
+    var blockIndex : Nat__490723111;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__490723111
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type OldProduct__278484740 =
+  {
+    created_at : Int;
+    id : Nat;
+    image_url : Text;
+    name : Text;
+    pdf_url : Text;
+    price : Float;
+    razorpay_link : Text
+  };
+type Product__750902660 =
+  {
+    created_at : Int;
+    description : ?Text;
+    id : Nat;
+    image_url : Text;
+    name : Text;
+    pdf_url : Text;
+    price : Float;
+    razorpay_link : Text
+  };
+actor ({
+  stable var nextProductId : Nat;
+  in products : List__415060402<OldProduct__278484740>
+}, {
+  stable var nextProductId : Nat;
+  stable products :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Product__750902660]];
+      var elementIndex : Nat__490723111
+    }
+}) ;
